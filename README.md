@@ -4,6 +4,9 @@ pip install -r requirements.txt
 source activate nanoGPT
 ## 启动服务
 uvicorn api-server:app --host '0.0.0.0' --port 9711 --reload
+## docker
+sudo docker build -t xf-cloud-yolov8:v1 .
+docker run --restart=always -p 9711:9711 --name xf-cloud-yolov8 -d xf-cloud-yolov8:v1
 ## test api
 井盖
 curl http://127.0.0.1:9711/detect_objects?image_url=https://i.328888.xyz/2023/04/17/ieHrRQ.jpeg
